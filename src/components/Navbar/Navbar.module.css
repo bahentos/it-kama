@@ -7,3 +7,6 @@
     color: white;
 }
 
+.item.active {
+  color: darkmagenta;
+}
