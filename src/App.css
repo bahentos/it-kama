@@ -8,25 +8,3 @@
   grid-template-columns: 2fr 10fr;
   grid-template-rows: 60px auto;
 }
-.header {
-  background-color: blue;
-  grid-area: header;
-}
-
-.header img{
-  height: 50px;
-}
-
-.nav {
-  background-color: coral;
-  grid-area: nav;
-}
-
-.main {
-  background-color: green;
-  grid-area: main;
-}
-
-.main img{
-  width: 900px;;
-}

@@ -1,0 +1,14 @@
+
+.main {
+    background-color: green;
+    grid-area: main;
+  }
+  
+.main img{
+    width: 900px;
+  }
+
+.item {
+    color: red;
+}
+  
