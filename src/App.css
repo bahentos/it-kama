@@ -8,3 +8,18 @@
   grid-template-columns: 2fr 10fr;
   grid-template-rows: 60px auto;
 }
+
+.app-wrapper-header {
+  background-color: blue;
+  grid-area: header;
+}
+
+.app-wrapper-navbar {
+  background-color: coral;
+  grid-area: nav;
+}
+
+.app-wrapper-dialogs {
+  background-color: cadetblue;
+  grid-area: main;
+}
