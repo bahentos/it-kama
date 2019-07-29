@@ -1,7 +1,25 @@
+
 .item {
   color: white;
+  text-decoration: none;
+}
+
+.item:link
+{
+  color: white;
+  text-decoration: none;
+}
+.item:visited
+{
+  color: white;
+  text-decoration: none;
+}
+.item:active
+{
+  color: white;
+  text-decoration: none;
 }
 
 .item.active {
-  color: darkmagenta;
+  color: gold;
 }

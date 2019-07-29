@@ -10,16 +10,17 @@
 }
 
 .app-wrapper-header {
-  background-color: blue;
   grid-area: header;
+  background-color: darkgreen;
 }
 
 .app-wrapper-navbar {
-  background-color: coral;
   grid-area: nav;
+  background-color: darkgray;
+  padding: 20px;
 }
 
 .app-wrapper-dialogs {
-  background-color: cadetblue;
   grid-area: main;
+  background-color: lightsalmon;
 }
