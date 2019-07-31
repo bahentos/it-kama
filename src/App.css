@@ -1,23 +1,21 @@
 .app-wrapper {
   margin: 0 auto;
-  width: 1200px;
   display: grid;
   grid-template-areas: 
-  "header header"
+  "nav header"
   "nav main";
-  grid-template-columns: 2fr 10fr;
-  grid-template-rows: 60px auto;
+  grid-template-columns: 255px auto;
+  grid-template-rows: 64px auto;
+  font-family: Roboto,sans-serif!important;
 }
 
 .app-wrapper-header {
   grid-area: header;
-  background-color: darkgreen;
+  
 }
 
 .app-wrapper-navbar {
   grid-area: nav;
-  background-color: darkgray;
-  padding: 20px;
 }
 
 .app-wrapper-dialogs {
