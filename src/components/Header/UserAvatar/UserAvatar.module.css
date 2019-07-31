@@ -1,0 +1,20 @@
+.avatarCont {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-items: left;
+  align-items: center;
+}
+
+.nameSpan {
+  padding: 7px 15px;
+  z-index: 1;
+  font-weight: 550;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  justify-self: right;
+  border-radius: 25px;
+  margin: 0 -7px;
+  z-index: 10;
+}

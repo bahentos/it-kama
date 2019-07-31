@@ -1,16 +1,12 @@
 import React from "react";
 import s from "./Header.module.css";
-import avatarimg from "./img/avatar.jpg";
+import UserAvatar from "./UserAvatar/UserAvatar";
 
 const Header = () => {
   return (
     <header className={s.header}>
-      <div className={s.arrow}>
-      </div>
-      <div className={s.avatarCont}>
-        <span>Tom Waits</span>
-        <img src={avatarimg} className={s.avatar}/>
-      </div>
+      <div className={s.arrow} />
+      <UserAvatar first={true} />
     </header>
   );
 };

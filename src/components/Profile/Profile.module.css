@@ -1,3 +1,4 @@
-.main img {
-  width: 900px;
+.main {
+  width: 100%;
+  box-sizing: border-box;
 }

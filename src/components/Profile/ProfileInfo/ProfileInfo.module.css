@@ -1,0 +1,15 @@
+.main {
+  width: 100%;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.fonContent {
+  height: 80px;
+  background: url("img/profil-top-fon.png");
+}
+.relative {
+  position: absolute;
+  bottom: -25px;
+  left: 25px;
+}
