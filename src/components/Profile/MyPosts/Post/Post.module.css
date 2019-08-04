@@ -1,10 +1,58 @@
 
+.avatarContainer {
+    display: grid;
+    justify-items: left;
+    align-items: center;
+    grid-template-columns: 50px auto;
+    margin-bottom: 20px;
+}
 .item {
-    color: red;
+    box-sizing: border-box;
+    width: 540px;
+    padding: 20px 20px 10px 20px;
+    background-color: #F0F1F2;
+    box-shadow: 0 2px 2px darkgray;
+    margin: 5px 0 20px 0;
 }
 
 .item img {
     width: 40px;
     height: 40px;
     border-radius: 20px;
+}
+
+.likeGroup {
+    display: grid;
+    justify-items: left;
+    align-items: center;
+    grid-template-columns: 80px auto;
+    margin-top: 20px;
+}
+
+.likeContainer {
+    display: grid;
+    justify-items: left;
+    align-items: center;
+    grid-template-columns: 25px auto;
+}
+
+button {
+        border: none;
+        width: 20px;
+        height: 20px;
+}
+
+.like {
+    background: url("img/like-svgrepo-com.svg") no-repeat 50% 50%;
+}
+
+.shareContainer {
+    display: grid;
+    justify-items: left;
+    align-items: center;
+    grid-template-columns: 25px auto;
+}
+
+.share {
+    background: url("img/share-svgrepo-com.svg") no-repeat 50% 50%;
 }

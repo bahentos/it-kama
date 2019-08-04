@@ -9,14 +9,16 @@ const UserName = (props) => {
 }
 
 const AvatarImg = (props) => {
+  let dig = props.width + "px";
+  let rad = (props.width / 2) + "px";
   return (
-    <img src={props.img} className={s.avatar}/>
+    <img style={{width: dig, height: dig, borderRadius: rad}} src={props.img} className={s.avatar}/>
   )
 }
 
 const UserAvatar = (props) => {
-  let a = <UserName textFonColor="white" userName="Tom Waits" />;
-  let b = <AvatarImg img={avatarimg} />;
+  let a = <UserName textFonColor={props.textFonColor} userName={props.userName} />;
+  let b = <AvatarImg width={props.width} img={avatarimg} />;
   return (
     <div className={s.avatarCont}>
       {(props.first)? a : b}

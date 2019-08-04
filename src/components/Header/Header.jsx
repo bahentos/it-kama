@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.arrow} />
-      <UserAvatar first={true} />
+      <UserAvatar width="50" textFonColor="white" userName="Tom Waits" first={true} />
     </header>
   );
 };

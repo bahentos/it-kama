@@ -1,5 +1,64 @@
-
-.item {
-    color: red;
+.main {
+    padding: 0 20px;
 }
-  
+.postContainer {
+    box-sizing: border-box;
+    width: 540px;
+    padding: 20px 20px 10px 20px;
+    background-color: #F0F1F2;
+    box-shadow: 0 2px 2px darkgray;
+    margin: 5px 0 20px 0;
+}
+
+.postContainer textarea {
+    border: none;
+    box-shadow: 0 2px 3px darkgray;
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.postContainer textarea {
+    box-sizing: border-box;
+    width: 100%;
+    height: 150px;
+}
+
+.iconContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 120px;
+    justify-content: space-between;
+}
+.iconContainer button {
+    border: none;
+    width: 20px;
+    height: 20px;
+}
+
+.icon1 {
+    background: url("img/icon1.svg") no-repeat 50% 50%;
+}
+
+.icon2 {
+    background: url("img/icon2.svg") no-repeat 50% 50%;
+}
+
+.icon3 {
+    background: url("img/icon3.svg") no-repeat 50% 50%;
+}
+
+.add {
+    width: 88px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #614E9C;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}

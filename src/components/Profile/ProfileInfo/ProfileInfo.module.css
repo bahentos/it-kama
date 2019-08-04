@@ -1,7 +1,7 @@
 .main {
   width: 100%;
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 .fonContent {
@@ -10,6 +10,6 @@
 }
 .relative {
   position: absolute;
-  bottom: -25px;
+  bottom: -60px;
   left: 25px;
 }
