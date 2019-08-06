@@ -58,3 +58,7 @@ button {
 .share {
     background: url("img/share-svgrepo-com.svg") no-repeat 50% 50%;
 }
+
+.message {
+    font-size: 14px;
+}

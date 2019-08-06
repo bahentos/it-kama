@@ -12,7 +12,7 @@ const Post = props => {
       <div className={s.avatarContainer}>
       <UserAvatar width="40" textFonColor="none" userName="Tom Waits" first={false} />
       </div>
-      <div>{props.message}</div>
+      <div className={s.message}>{props.message}</div>
       <div className={s.likeGroup}>
         <div className={s.likeContainer}>
           <button className={s.like} />

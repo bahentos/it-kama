@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from '../render';
+
 const state = {
   dialogsPage: {
     dialogsData: [
@@ -26,20 +28,24 @@ const state = {
 
   mypostPage: {
     messagesData: [
-      { id: 1, likeCount: 12, message: "Hi, how are your?" },
+      { id: 1, likeCount: 12, message: `Pedestrians running for shelter into the market and under the portico
+      of St. Paul's Church, where there are already several people, among them alady and her daughter in evening dress.
+      They are all peering out gloomily at the rain, except one man with hisback turned to the rest, who seems wholly preoccupied with a notebookin which he is writing busily.
+      ` },
       { id: 2, likeCount: 24, message: "Everyone has one's own path" },
     ],
   }
 };
 
+
 export let addPost = (postMessage) => {
-  debugger;
   let newPost = {
     id: 3,
     message: postMessage,
     likeCount: 0
   };
-  state.mypostPage.messagesData.push(newPost)
+  state.mypostPage.messagesData.push(newPost);
+  rerenderEntireTree(state);
 }
 
 export default state;
