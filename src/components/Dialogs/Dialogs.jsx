@@ -20,6 +20,7 @@ const dialogsMessage = [
 ]
 
 
+
 const DialogItem = (props) => {
   let path = "/dialogs/" + props.id;
   return (
@@ -36,17 +37,15 @@ const Message = (props) => {
 }
 
 const Dialogs = () => {
+  let dialogs = dialogsData.map( name => <DialogItem name={name.name} id={name.id} />);
+  let messages = dialogsMessage.map( messages => <DialogItem name={messages.message} id={messages.id} />);
   return (
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>
-        <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
-        <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
-        <DialogItem name={dialogsData[2].name} id={dialogsData[2].id} />
+        {dialogs}
       </div>
       <div className={s.messagesItems}>
-        <Message message={dialogsMessage[0].message} />
-        <Message message={dialogsMessage[1].message} />
-        <Message message={dialogsMessage[2].message} />
+        {messages}
       </div>
     </div>
   );

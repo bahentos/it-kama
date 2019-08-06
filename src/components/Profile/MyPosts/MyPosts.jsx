@@ -22,6 +22,8 @@ const messagesData = [
 
 
 const MyPosts = () => {
+  let posts = postData.map((post, index) => <Post userName={post.name} message={messagesData[index].message} likeCount={post.likeCount} avatar={post.avatar} />)
+
   return (
     <div className={s.main}>
       My posts
@@ -36,8 +38,7 @@ const MyPosts = () => {
           <button className={s.add}>Post</button>
         </div>
       </div>
-      <Post userName={postData[0].name} message={messagesData[0].message} likeCount={postData[0].likeCount} avatar={postData[0].avatar} />
-      <Post userName={postData[1].name} message={messagesData[1].message} likeCount={postData[1].likeCount} avatar={postData[1].avatar} />
+      {posts}
     </div>
   );
 };
