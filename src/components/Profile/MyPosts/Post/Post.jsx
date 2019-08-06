@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./Post.module.css";
+import UserAvatar from '../../../Header/UserAvatar/UserAvatar';
 
 
 const Post = props => {
@@ -9,8 +10,7 @@ const Post = props => {
   return (
     <div className={s.item}>
       <div className={s.avatarContainer}>
-        <div className={s.avatarImg} style={{backgroundImage: imgUrl}}></div>
-        <span>{props.userName}</span>
+      <UserAvatar width="40" textFonColor="none" userName="Tom Waits" first={false} />
       </div>
       <div>{props.message}</div>
       <div className={s.likeGroup}>
