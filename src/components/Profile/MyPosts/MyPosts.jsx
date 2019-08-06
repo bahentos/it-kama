@@ -6,13 +6,14 @@ import { futimes } from "fs";
 
 
 const MyPosts = (props) => {
-  let posts = props.postData.map((post, index) => <Post userName={post.name} message={props.messagesData[index].message} likeCount={post.likeCount} avatar={post.avatar} />)
+  let posts = props.messagesData.map( post => <Post userName={post.name} message={post.message} likeCount={post.likeCount} />)
   
   let newPostElement = React.createRef();
 
-  let addPost = () => {
+  let addNewPost = () => {
+    debugger;
     let text = newPostElement.current.value;
-    alert(text);
+    props.addPost(text);
   }
 
   return (
@@ -26,7 +27,7 @@ const MyPosts = (props) => {
             <button className={s.icon2} />
             <button className={s.icon3} />
           </div>
-          <button onClick={ addPost } className={s.add}>Post</button>
+          <button onClick={ addNewPost } className={s.add}>Post</button>
         </div>
       </div>
       {posts}

@@ -25,16 +25,21 @@ const state = {
   },
 
   mypostPage: {
-    postData: [
-      { id: 1, likeCount: 12 },
-      { id: 2, likeCount: 24 },
-    ],
-
     messagesData: [
-      { id: 1, message: "Hi, how are your?" },
-      { id: 2, message: "Everyone has one's own path" },
-    ]
+      { id: 1, likeCount: 12, message: "Hi, how are your?" },
+      { id: 2, likeCount: 24, message: "Everyone has one's own path" },
+    ],
   }
 };
+
+export let addPost = (postMessage) => {
+  debugger;
+  let newPost = {
+    id: 3,
+    message: postMessage,
+    likeCount: 0
+  };
+  state.mypostPage.messagesData.push(newPost)
+}
 
 export default state;
