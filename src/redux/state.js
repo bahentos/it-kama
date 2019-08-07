@@ -34,17 +34,25 @@ const state = {
       ` },
       { id: 2, likeCount: 24, message: "Everyone has one's own path" },
     ],
+    newPostText: "",
   }
 };
 
+window.state = state;
 
 export let addPost = (postMessage) => {
   let newPost = {
     id: 3,
-    message: postMessage,
+    message: state.mypostPage.newPostText,
     likeCount: 0
   };
   state.mypostPage.messagesData.push(newPost);
+  rerenderEntireTree(state);
+  state.mypostPage.newPostText = "";
+}
+
+export let updatePostText = (newText) => {
+  state.mypostPage.newPostText = newText;
   rerenderEntireTree(state);
 }
 

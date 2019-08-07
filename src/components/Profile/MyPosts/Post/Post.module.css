@@ -36,6 +36,7 @@
     justify-items: left;
     align-items: center;
     grid-template-columns: 25px auto;
+    font-size: 14px;
 }
 
 button {
@@ -53,6 +54,7 @@ button {
     justify-items: left;
     align-items: center;
     grid-template-columns: 25px auto;
+    font-size: 14px;
 }
 
 .share {
