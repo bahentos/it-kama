@@ -16,6 +16,7 @@
 
 .app-wrapper-navbar {
   grid-area: nav;
+  height: 100%;
 }
 
 .app-wrapper-dialogs {
