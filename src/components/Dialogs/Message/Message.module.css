@@ -1,0 +1,34 @@
+
+.messagesItems {
+  padding: 0 20px 0 0;
+  grid-area: m;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: fit-content(40%) auto fit-content(40%);
+  align-items: stretch; 
+  background-color: #F5F5F5;
+}
+
+.messagesArea {
+  box-sizing: border-box;
+  background-color: #c5518d;
+  padding: 20px;
+}
+
+.messageContainer {
+  position: relative;
+  box-sizing: border-box;
+  padding: 8px;
+  border-radius: 6px;
+  background-color: rgba(191, 191, 210, 0.5);
+  width: 37.42%;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.messageContainer img {
+  position: absolute;
+  width: 11px;
+  left: -11px;
+  bottom: 10px;
+}

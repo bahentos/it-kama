@@ -5,7 +5,6 @@ import UserAvatar from '../../../Header/UserAvatar/UserAvatar';
 
 const Post = props => {
 
-  let imgUrl = `url("${props.avatar}")`;
   
   return (
     <div className={s.item}>

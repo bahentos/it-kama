@@ -1,0 +1,48 @@
+
+.messagesHeader {
+  padding: 12px 30px;
+  display: grid;
+  grid-template-columns: fit-content(40%) fit-content(40%);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: grid;
+  grid-template-columns: 60px fit-content(100%);
+  justify-content: left;
+  align-items: center;
+}
+.right {
+  display: grid;
+  grid-template-columns: 37px 37px;
+  justify-content: right;
+  align-items: center;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+
+.changeBackground {
+  width: 36px;
+  height: 36px;
+  background: url("img/brush.svg") no-repeat 50% 50%;
+  background-size: 16px;
+  border-radius: 18px;
+}
+
+.contactInfo {
+  width: 36px;
+  height: 36px;
+  background: url("img/3dots.svg") no-repeat 50% 50%;
+  background-size: 4px;
+  border-radius: 18px;
+}
+
+.contactInfo:hover,
+.changeBackground:hover {
+  background-color: #dcdcdc;
+}

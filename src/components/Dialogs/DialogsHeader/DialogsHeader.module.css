@@ -1,0 +1,41 @@
+
+.dialogsHeader {
+  grid-area: h;
+  background-color: #FAFBFB;
+  display: grid;
+  grid-template-columns: 140px auto;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.iconChatContainer {
+  display: grid;
+  grid-template-columns: 65px auto;
+  align-items: center;
+}
+
+.iconChatContainer span {
+  font-size: 22px;
+  color: #600fd8;
+}
+
+.iconChat {
+  width: 48px;
+  height: 48px;
+  background: #600fd8 url("img/chat1.svg") no-repeat 50% 50%;
+  background-size: 20px;
+  
+}
+
+.searchField {
+  width: 300px;
+  height: 48px;
+  border: none;
+  box-shadow: 0px 2px 5px -1px #787878;
+  border-radius: 3px;
+  background: white url("img/loupe.svg") no-repeat 95% 50%;
+  background-size: 18px;
+  font-size: 16px;
+  padding: 12px;
+  box-sizing: border-box;
+}
