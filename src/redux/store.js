@@ -12,11 +12,7 @@ let store = {
         { id: 3, name: "John Little", avatar: "/img/avatar-4.png", unread: 8, userMessages: [3] },
         { id: 4, name: "Robin Good", avatar: "/img/avatar-5.png", unread: 1, userMessages: [5, 6] },
         {
-          id: 5,
-          likeCount: 15,
-          name: "Richard Crosby",
-          avatar: "/img/avatar-6.png",
-          unread: 12, userMessages: [8, 9, 10]
+          id: 5, name: "Richard Crosby", avatar: "/img/avatar-6.png", unread: 12, userMessages: [8, 9, 10]
         }
       ],
 
@@ -48,8 +44,10 @@ let store = {
         },
         { id: 2, likeCount: 24, message: "Everyone has one's own path" }
       ],
-      newPostText: ""
-    }
+      newPostText: "",
+    },
+
+    sidebar: {},
   },
   _callSubscriber() {},
 
