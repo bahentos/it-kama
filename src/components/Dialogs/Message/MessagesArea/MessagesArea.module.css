@@ -2,6 +2,13 @@
   box-sizing: border-box;
   background-color: #c5518d;
   padding: 20px;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: flex-start;
+}
+
+.messageContainer:nth-child(2n) {
+  justify-self: end;
 }
 
 .messageContainer {
@@ -14,6 +21,7 @@
   font-size: 13px;
   line-height: 1.5;
 }
+
 
 .messageContainer img {
   position: absolute;

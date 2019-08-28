@@ -1,0 +1,45 @@
+
+.navLink {
+  display: grid;
+  grid-template-columns: 56px auto 26px;
+  align-items: center;
+  width: 300px;
+  height: 72px;
+  box-sizing: border-box;
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+ text-decoration: none;
+ color: #242424;
+}
+
+.navLink:hover {
+  background-color: #f5f5f5;
+}
+.navLink:active {
+  background-color: #600fd8;
+
+}
+
+
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  /* background: url("DialogItem/img/avatar-2.png") no-repeat 50% 50%; */
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.unread {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #683cb0;
+  color: white;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0px 3px 5px #bfbfbf;
+}

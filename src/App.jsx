@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Dialogs from "./components/Dialogs/Dialogs";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
@@ -25,8 +25,8 @@ function App(props) {
             path="/dialogs"
             render={() => (
               <Dialogs
-                dialogsData={props.state.dialogsPage.dialogsData}
-                dialogsMessage={props.state.dialogsPage.dialogsMessage}
+                dispatch={props.dispatch}
+                dialogsPage={props.state.dialogsPage}
               />
             )}
           />

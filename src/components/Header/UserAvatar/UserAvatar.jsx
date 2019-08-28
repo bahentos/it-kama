@@ -12,7 +12,7 @@ const AvatarImg = (props) => {
   let dig = props.width + "px";
   let rad = (props.width / 2) + "px";
   return (
-    <img style={{width: dig, height: dig, borderRadius: rad}} src={props.img} className={s.avatar}/>
+    <img style={{width: dig, height: dig, borderRadius: rad}} alt="avatar" src={props.img} className={s.avatar}/>
   )
 }
 
