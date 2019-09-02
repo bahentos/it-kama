@@ -5,7 +5,8 @@ import DialogItem from "./DialogItem/DialogItem";
 import DialogsHeader from "./DialogsHeader/DialogsHeader";
 
 const Dialogs = props => {
-  let dialogs = props.dialogsPage.dialogsData.map(name => (
+  let state = props.store.getState();
+  let dialogs = state.dialogsPage.dialogsData.map(name => (
     <DialogItem
       name={name.name}
       avatar={name.avatar}
@@ -16,11 +17,10 @@ const Dialogs = props => {
 
   return (
     <div className={s.dialogs}>
-      <DialogsHeader dialogsData={props.dialogsPage.dialogsData} />
+      <DialogsHeader />
       <div className={s.dialogsItems}>{dialogs}</div>
       <Message
-        dialogsPage={props.dialogsPage}
-        dispatch={props.dispatch}
+        store={props.store}
       />
     </div>
   );

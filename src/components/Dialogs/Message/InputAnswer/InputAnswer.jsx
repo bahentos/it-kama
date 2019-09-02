@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./InputAnswer.module.css";
-import { updateNewMessageActionCreator, addSendMessageActionCreator } from '../../../../redux/dialogsReducer';
 
 
 const InputAnswer = props => {
@@ -9,12 +8,12 @@ const InputAnswer = props => {
   let newMessageElement = React.createRef();
 
   let addMessage = () => {
-    props.dispatch(addSendMessageActionCreator());
+    props.addMessage();
   }
 
   let onChangeMessage = () => {
     let text = newMessageElement.current.value;
-    props.dispatch(updateNewMessageActionCreator(text));
+    props.changeMessage(text);
   };
   
   return (
@@ -24,7 +23,7 @@ const InputAnswer = props => {
         ref={newMessageElement}
         rows="1"
         placeholder="Type your message..."
-        value={props.dialogsPage.newMessageBody}
+        value={props.newMessageBody}
       ></textarea>
       <button 
        onClick={addMessage} ></button>

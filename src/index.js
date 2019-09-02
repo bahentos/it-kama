@@ -8,13 +8,14 @@ import App from './App';
 
 
 let rerenderEntireTree = (state) => {
-  ReactDOM.render(<App state={state} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
+  
+  ReactDOM.render(<App store={state} dispatch={store.dispatch.bind(store)} />, document.getElementById('root'));
 }
 
-rerenderEntireTree(store.getState());
+rerenderEntireTree(store);
 store.subscribe(() => {
-  let state = store.getState();
-  rerenderEntireTree(state);
+  // let state = store.getState();
+  rerenderEntireTree(store);
 });
 
 // If you want your app to work offline and load faster, you can change
