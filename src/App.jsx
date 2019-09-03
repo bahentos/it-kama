@@ -11,7 +11,7 @@ import News from "./components/News/News";
 
 function App(props) {
   return (
-    <BrowserRouter>
+    
       <div className="app-wrapper">
         <div className="app-wrapper-header">
           <Header />
@@ -43,7 +43,6 @@ function App(props) {
           <Route exact path="/settings" render={() => <Settings />} />
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
