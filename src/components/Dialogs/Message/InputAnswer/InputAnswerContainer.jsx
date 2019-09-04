@@ -2,25 +2,32 @@ import React from "react";
 import s from "./InputAnswer.module.css";
 import { updateNewMessageActionCreator, addSendMessageActionCreator } from '../../../../redux/dialogsReducer';
 import InputAnswer from "./InputAnswer";
+import StoreContext from "../../../../store-context";
 
-const InputAnswerContainer = props => {
-  let state = props.store.getState();
+const InputAnswerContainer = () => {
+  return <StoreContext.Consumer>
+    { store => {
+        let state = store.getState();
 
-  let addMessage = () => {
-    props.store.dispatch(addSendMessageActionCreator());
-  }
-
-  let onChangeMessage = (text) => {
-    props.store.dispatch(updateNewMessageActionCreator(text));
-  };
+        let addMessage = () => {
+          store.dispatch(addSendMessageActionCreator());
+        }
+      
+        let onChangeMessage = (text) => {
+          store.dispatch(updateNewMessageActionCreator(text));
+        };
+        
+        return (
+            <InputAnswer 
+            addMessage={addMessage} 
+            changeMessage={onChangeMessage}
+            newMessageBody={state.dialogsPage.newMessageBody}
+            />
+          )
+      }
+    }
+    </StoreContext.Consumer>
   
-  return (
-      <InputAnswer 
-      addMessage={addMessage} 
-      changeMessage={onChangeMessage}
-      newMessageBody={state.dialogsPage.newMessageBody}
-      />
-    )
 };
 
 export default InputAnswerContainer;

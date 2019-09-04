@@ -4,9 +4,8 @@ import StoreContext from '../../store-context';
 
 const DialogsContainer = () => {
   
-  <StoreContext.Consumer>
-    {
-      (store) => {
+  return <StoreContext.Consumer>
+    { store => {
         let state = store.getState();
 
         return <Dialogs dialogsData={state.dialogsPage.dialogsData}/>

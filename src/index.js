@@ -7,11 +7,11 @@ import App from "./App";
 import StoreContext from "./store-context";
 import { BrowserRouter } from "react-router-dom";
 
-let rerenderEntireTree = state => {
+let rerenderEntireTree = store => {
   ReactDOM.render(
     <BrowserRouter>
       <StoreContext.Provider value={store}>
-        <App store={state} />
+        <App store={store} />
         </StoreContext.Provider>
     </BrowserRouter>,
     document.getElementById("root")
