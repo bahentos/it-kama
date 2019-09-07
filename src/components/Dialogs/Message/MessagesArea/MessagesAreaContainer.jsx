@@ -1,17 +1,20 @@
 import React from "react";
 import MessagesArea from './MessagesArea';
-import StoreContext from "../../../../store-context";
+import { connect } from 'react-redux';
 
 
-const MessagesAreaContainer = () => {
-  return <StoreContext.Consumer>
-    { store => {
-        let state = store.getState();
-        return <MessagesArea  dialogsMessage={state.dialogsPage.dialogsMessage} />
-      }
-    }
-    </StoreContext.Consumer>
-  
+let mapStateToProps = (state) => {
+  return {
+    dialogsMessage: state.dialogsPage.dialogsMessage,
+  }
 }
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+
+  }
+}
+
+const MessagesAreaContainer = connect(mapStateToProps, mapDispatchToProps)(MessagesArea);
 
 export default MessagesAreaContainer;

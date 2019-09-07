@@ -31,9 +31,7 @@ function App(props) {
             exact
             path="/profile"
             render={() => (
-              <Profile
-                store={props.store}
-              />
+              <Profile />
             )}
           />
           <Route exact path="/news" render={() => <News />} />
