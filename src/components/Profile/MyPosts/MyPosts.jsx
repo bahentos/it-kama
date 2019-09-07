@@ -8,6 +8,7 @@ const MyPosts = props => {
 
   let posts = props.messagesData.map(post => (
     <Post
+      key={post.id}
       userName={post.name}
       message={post.message}
       likeCount={post.likeCount}

@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
-    dialogsData: state.dialogsPage.newMessageBody,
+    newMessageBody: state.dialogsPage.newMessageBody,
   }
 };
 
@@ -23,5 +23,3 @@ const InputAnswerContainer = connect(mapStateToProps, mapDispatchToProps)(InputA
 
 
 export default InputAnswerContainer;
-
-// style={{(changeMarker) ? backgroundColor: "#e91a62" : backgroundColor: "#e91a62"}}

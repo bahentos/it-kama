@@ -5,9 +5,9 @@ import triangle from './img/triangle.svg'
 
 const MessagesArea = (props) => {
   let messages = props.dialogsMessage.map( message => 
-    (<div className={s.messageContainer}>
-      <img src={triangle} alt="" />
-      <div className={s.message}>{message.message}</div>
+    (<div key={message.id} className={s.messageContainer}>
+      <img key={"img"+message.id} src={triangle} alt="" />
+      <div key={"message"+message.id} className={s.message}>{message.message}</div>
     </div>)
    )
   return (

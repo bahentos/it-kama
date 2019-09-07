@@ -7,6 +7,7 @@ import DialogsHeader from "./DialogsHeader/DialogsHeader";
 const Dialogs = props => {
   let dialogs = props.dialogsData.map(name => (
     <DialogItem
+      key={name.id}
       name={name.name}
       avatar={name.avatar}
       unread={name.unread}
