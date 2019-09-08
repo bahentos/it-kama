@@ -2,6 +2,7 @@ import { createStore, combineReducers } from "redux";
 import profileReducer from './profileReducer';
 import dialogsReducer from './dialogsReducer';
 import sidebarReducer from './sidebarReducer';
+import usersReducer from './usersReducer';
 
 
 
@@ -10,6 +11,7 @@ import sidebarReducer from './sidebarReducer';
 let redusers = combineReducers({
     mypostPage: profileReducer,
     dialogsPage: dialogsReducer,
+    usersPage: usersReducer,
     sidebar: sidebarReducer,
 });
 

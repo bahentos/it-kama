@@ -1,0 +1,42 @@
+.usersContainer {
+  width: 520px;
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-auto-flow: column;
+  justify-content: left;
+  justify-items: left;
+  align-items: center;
+  background-color: #ffc043;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.userAvatar {
+  width: 76px;
+  border-radius: calc(100% / 2);
+}
+
+.but {
+  background-color: #b7b7b7;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.but:hover,
+.but.unfollow:hover {
+  background-color: blue;
+}
+
+.but:active,
+.but.unfollow:active {
+  background-color: red;
+}
+
+.but.unfollow {
+  background-color: green;
+}

@@ -8,6 +8,7 @@ import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 function App(props) {
   return (
@@ -21,18 +22,17 @@ function App(props) {
         </div>
         <div className="app-wrapper-dialogs">
           <Route
-            exact
-            path="/dialogs"
-            render={() => (
-              <DialogsContainer />
+            exact path="/dialogs"
+            render={() => ( <DialogsContainer />
             )}
           />
           <Route
-            exact
-            path="/profile"
-            render={() => (
-              <Profile />
-            )}
+            exact path="/profile"
+            render={() => ( <Profile /> )}
+          />
+          <Route
+            exact path="/users"
+            render={() => ( <UsersContainer /> )}
           />
           <Route exact path="/news" render={() => <News />} />
           <Route exact path="/music" render={() => <Music />} />
