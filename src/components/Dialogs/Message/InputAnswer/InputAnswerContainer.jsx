@@ -1,5 +1,4 @@
 import React from "react";
-import s from "./InputAnswer.module.css";
 import { updateNewMessageActionCreator, addSendMessageActionCreator } from '../../../../redux/dialogsReducer';
 import InputAnswer from "./InputAnswer";
 import { connect } from 'react-redux';
