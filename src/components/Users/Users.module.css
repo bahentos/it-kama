@@ -40,3 +40,26 @@
 .but.unfollow {
   background-color: green;
 }
+
+.getUsers {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #BBFFD7;
+  border: #BBFFD7 solid 2px;
+  color: #144F2C;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.getUsers:hover {
+  border: #BEBBFF solid 2px;
+}
+
+.getUsers:active {
+  background-color: #144F2C;
+  border: #144F2C solid 2px;
+  color: #BBFFD7;
+}
