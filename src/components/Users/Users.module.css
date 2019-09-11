@@ -20,25 +20,39 @@
 }
 
 .but {
-  background-color: #b7b7b7;
+  background-color: #BBFFD7;
+  border: #BBFFD7 solid 2px;
+  color: #144F2C;
   padding: 5px 10px;
   text-align: center;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.but:hover,
-.but.unfollow:hover {
-  background-color: blue;
+.but:hover {
+  border: #BEBBFF solid 2px;
 }
 
-.but:active,
-.but.unfollow:active {
-  background-color: red;
+.but:active {
+  background-color: #144F2C;
+  border: #144F2C solid 2px;
+  color: #BBFFD7;
 }
 
 .but.unfollow {
-  background-color: green;
+  background-color: #144F2C;
+  border: #144F2C solid 2px;
+  color: #BBFFD7;
+}
+
+.but.unfollow:hover {
+  border: #BEBBFF solid 2px;
+}
+
+.but.unfollow:active {
+  background-color: #BBFFD7;
+  border: #BBFFD7 solid 2px;
+  color: #144F2C;
 }
 
 .getUsers {
