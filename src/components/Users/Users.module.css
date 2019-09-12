@@ -77,3 +77,15 @@
   border: #144F2C solid 2px;
   color: #BBFFD7;
 }
+
+.pagesContainer {
+  margin: 5px 10px;
+}
+
+.pagesContainer span {
+  margin-right: 5px;
+}
+
+.selectedPage {
+  font-weight: bold;
+}
