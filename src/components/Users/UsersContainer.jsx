@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as axios from "axios";
-import { followAC, unfollowAC, setUsersAC, setCurrentPageAC, setUsersTotalCountAC } from '../../redux/usersReducer';
+import { follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount } from '../../redux/usersReducer';
 import Users from './Users';
 
 class UsersAPI extends React.Component {
@@ -46,16 +46,20 @@ let mapStateToProps = (state) => {
     }
 }
 
-let mapDispatchToProps = (dispatch) => {
-    return {
-        follow: (userId) => {dispatch(followAC(userId))},
-        unfollow: (userId) => {dispatch(unfollowAC(userId))},
-        setUsers: (users) => {dispatch(setUsersAC(users))},
-        setCurrentPage: (page) => {dispatch(setCurrentPageAC(page))},
-        setUsersTotalCount: (totalCount) => {dispatch(setUsersTotalCountAC(totalCount))}
-    }
-}
+//Старый вариант mapDispatchToProps
+
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         follow: (userId) => {dispatch(follow(userId))},
+//         unfollow: (userId) => {dispatch(unfollow(userId))},
+//         setUsers: (users) => {dispatch(setUsers(users))},
+//         setCurrentPage: (page) => {dispatch(setCurrentPage(page))},
+//         setUsersTotalCount: (totalCount) => {dispatch(setUsersTotalCount(totalCount))}
+//     }
+// }
+
+let callObj = {follow, unfollow, setUsers, setCurrentPage, setUsersTotalCount,}
 
 
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(UsersAPI)
+const UsersContainer = connect(mapStateToProps, callObj)(UsersAPI)
 export default UsersContainer;  
