@@ -1,11 +1,11 @@
 import React from 'react';
 import s from "./Users.module.css";
 import defaultAvatar from "../../Assets/img/user.png";
+import { NavLink } from 'react-router-dom';
 
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
-console.log(props.totalUsersCount);
 
     
     let pagesNumber = [];
@@ -22,11 +22,13 @@ console.log(props.totalUsersCount);
           </div>
         {props.users.map(u => (
           <div className={s.usersContainer} key={u.id}>
+            <NavLink to={'/profile/' + u.id}>
             <img
               className={s.userAvatar}
               src={u.photos.small != null ? u.photos.small : defaultAvatar}
               alt="userAvatar"
             />
+            </NavLink>
             <div>
               {u.followed ? (
                 <div

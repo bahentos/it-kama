@@ -9,6 +9,7 @@ import Music from "./components/Music/Music";
 import News from "./components/News/News";
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 function App(props) {
   return (
@@ -22,16 +23,16 @@ function App(props) {
         </div>
         <div className="app-wrapper-dialogs">
           <Route
-            exact path="/dialogs"
+             path="/dialogs"
             render={() => ( <DialogsContainer />
             )}
           />
           <Route
-            exact path="/profile"
-            render={() => ( <Profile /> )}
+             path="/profile"
+            render={() => ( <ProfileContainer /> )}
           />
           <Route
-            exact path="/users"
+             path="/users"
             render={() => ( <UsersContainer /> )}
           />
           <Route exact path="/news" render={() => <News />} />

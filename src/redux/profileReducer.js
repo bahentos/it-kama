@@ -1,5 +1,6 @@
 const ADD_POST = "ADD-POST";
 const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
+const SET_USERS_PROFILE = "SET-USERS-PROFILE";
 
 
 let initialState = {
@@ -15,6 +16,7 @@ let initialState = {
     { id: 2, likeCount: 24, message: "Everyone has one's own path" }
   ],
   newPostText: "",
+  profile: null,
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -34,6 +36,10 @@ const profileReducer = (state = initialState, action) => {
         return {
           ...state, newPostText: action.newText
         }
+      case "SET-USERS-PROFILE":
+        return {
+          ...state, profile: action.profile
+        }
     default:
       return state;
   }
@@ -42,3 +48,4 @@ export default profileReducer;
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const updatePostActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text});
+export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile});

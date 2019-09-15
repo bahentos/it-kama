@@ -1,15 +1,13 @@
 .main {
   width: 100%;
-  position: relative;
   margin-bottom: 70px;
-}
-
-.fonContent {
-  height: 80px;
   background: url("img/profil-top-fon.png");
 }
-.relative {
-  position: absolute;
-  bottom: -60px;
-  left: 25px;
+
+
+.userAvatar {
+  border-radius: 50px;
+  width: 100px;
+  margin-left: 25px;
+  margin-right: auto;
 }
