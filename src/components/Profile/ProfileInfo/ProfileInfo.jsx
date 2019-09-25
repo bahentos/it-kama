@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./ProfileInfo.module.css";
-import defaultAvatar from "../../../Assets/img/user.png";
+import defaultAvatar from "../../../Assets/img/userDefaults.png";
 import Preloader from '../../Common/Preloader/Preloader';
 
 const ProfileInfo = (props) => {

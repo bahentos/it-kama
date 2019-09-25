@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./Users.module.css";
-import defaultAvatar from "../../Assets/img/user.png";
+import defaultAvatar from "../../Assets/img/userDefaults.png";
 import { NavLink } from 'react-router-dom';
 
 
