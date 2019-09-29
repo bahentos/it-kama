@@ -6,7 +6,7 @@ const Header = (props) => {
     return (
         <header className={s.header}>
             <div className={s.arrow}/>
-            <UserAvatar  width="50" textFonColor="white" isAuth={props.isAuth} userName={props.login} img={props.photo} first={true}/>
+            <UserAvatar  width="50" textFonColor="white" id={props.id} isAuth={props.isAuth} userName={props.login} img={props.photo} first={true}/>
         </header>
     );
 };
