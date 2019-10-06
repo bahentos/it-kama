@@ -14,6 +14,7 @@ let Users = (props) => {
         pagesNumber.push(i);
     }
 
+
     return (
         <div>
             <div className={s.pagesContainer}>
@@ -35,11 +36,16 @@ let Users = (props) => {
                     <div>
                         {u.followed ? (
                             <div
+                                style={props.followingInProgress.some(id => id ===  u.id)
+                                    ? {pointerEvents: "none", background: "lightgrey"}
+                                    : {pointerEvents: ""}}
                                 onClick={() => {
+                                    props.toggleFollowingProgress(true, u.id);
                                     usersAPI.unfollowUsers(u.id).then(data => {
                                             if (data.resultCode === 0) {
                                                 props.unfollow(u.id);
                                             }
+                                        props.toggleFollowingProgress(false, u.id);
                                         });
                                 }}
                                 className={s.but + " " + s.unfollow}
@@ -48,11 +54,16 @@ let Users = (props) => {
                             </div>
                         ) : (
                             <div
+                                style={props.followingInProgress.some(id => id ===  u.id)
+                                    ? {pointerEvents: "none", background: "lightgrey"}
+                                    : {pointerEvents: ""}}
                                 onClick={() => {
+                                    props.toggleFollowingProgress(true, u.id);
                                     usersAPI.followUsers(u.id).then(data => {
                                             if (data.resultCode === 0) {
                                                 props.follow(u.id)
                                             }
+                                        props.toggleFollowingProgress(false, u.id)
                                         });
                                 }}
                                 className={s.but}
