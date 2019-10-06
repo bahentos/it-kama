@@ -2,7 +2,6 @@ import React from 'react';
 import s from "./Users.module.css";
 import defaultAvatar from "../../Assets/img/userDefaults.png";
 import {NavLink} from 'react-router-dom';
-import {usersAPI} from "../../API/API";
 
 
 let Users = (props) => {
@@ -39,15 +38,7 @@ let Users = (props) => {
                                 style={props.followingInProgress.some(id => id ===  u.id)
                                     ? {pointerEvents: "none", background: "lightgrey"}
                                     : {pointerEvents: ""}}
-                                onClick={() => {
-                                    props.toggleFollowingProgress(true, u.id);
-                                    usersAPI.unfollowUsers(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.unfollow(u.id);
-                                            }
-                                        props.toggleFollowingProgress(false, u.id);
-                                        });
-                                }}
+                                onClick={() => props.unfollow(u.id)}
                                 className={s.but + " " + s.unfollow}
                             >
                                 Unfollow
@@ -57,15 +48,7 @@ let Users = (props) => {
                                 style={props.followingInProgress.some(id => id ===  u.id)
                                     ? {pointerEvents: "none", background: "lightgrey"}
                                     : {pointerEvents: ""}}
-                                onClick={() => {
-                                    props.toggleFollowingProgress(true, u.id);
-                                    usersAPI.followUsers(u.id).then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.follow(u.id)
-                                            }
-                                        props.toggleFollowingProgress(false, u.id)
-                                        });
-                                }}
+                                onClick={() =>  props.follow(u.id)}
                                 className={s.but}
                             >
                                 Follow

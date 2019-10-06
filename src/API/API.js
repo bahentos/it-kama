@@ -28,5 +28,27 @@ export const usersAPI = {
             .delete(`follow/${id}`).then(response => {
                 return response.data
             })
-    }
-}
+    },
+    setUserProfile (id) {
+        return instance
+            .get(`profile/${id}`).then(response => {
+                return response.data;
+
+            });
+    },
+    userAuth () {
+        return instance
+            .get(`auth/me`).then(response => {
+                return response.data;
+
+            });
+    },
+
+    userPhotoCheck (id) {
+        return instance
+            .get(`profile/${id}`).then(response => {
+                return response.data;
+
+            });
+    },
+};

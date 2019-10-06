@@ -1,36 +1,21 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {
-    follow,
-    unfollow,
-    setUsers,
     setCurrentPage,
-    setUsersTotalCount,
-    toggleIsFetching, toggleFollowingProgress
+    toggleFollowingProgress,
+    getUsers, unfollowSuccess, followSuccess, unfollow, follow
 } from '../../redux/usersReducer';
 import Users from './Users';
 import Preloader from '../Common/Preloader/Preloader';
-import {usersAPI} from "../../API/API";
 
 class UsersAPI extends React.Component {
     componentDidMount() {
-        this.props.toggleIsFetching(true);
-        usersAPI.getUsers(this.props.currentPage, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-            this.props.setUsersTotalCount(data.totalCount);
-        });
+        this.props.getUsers(this.props.currentPage, this.props.pageSize);
     }
 
 
     onPageChanged = page => {
-        this.props.setCurrentPage(page);
-        this.props.toggleIsFetching(true);
-        usersAPI.getUsers(page, this.props.pageSize).then(data => {
-            this.props.toggleIsFetching(false);
-            this.props.setUsers(data.items);
-
-        });
+        this.props.getUsers(page, this.props.pageSize);
     };
 
     render() {
@@ -46,7 +31,6 @@ class UsersAPI extends React.Component {
                     onPageChanged={this.onPageChanged}
                     users={this.props.users}
                     followingInProgress={this.props.followingInProgress}
-                    toggleFollowingProgress={this.props.toggleFollowingProgress}
                 />
                 ;
             </>
@@ -60,7 +44,6 @@ let mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         totalUsersCount: state.usersPage.totalUsersCount,
         currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
         followingInProgress: state.usersPage.followingInProgress,
     }
 }
@@ -80,11 +63,11 @@ let mapStateToProps = (state) => {
 let callObj = {
     follow,
     unfollow,
-    setUsers,
+    followSuccess,
+    unfollowSuccess,
     setCurrentPage,
-    setUsersTotalCount,
-    toggleIsFetching,
-    toggleFollowingProgress
+    toggleFollowingProgress,
+    getUsers,
 }
 
 

@@ -1,6 +1,9 @@
+import {usersAPI} from "../API/API";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_POST_TEXT = "UPDATE-POST-TEXT";
 const SET_USERS_PROFILE = "SET-USERS-PROFILE";
+const SET_USER_AUTH = "SET-USER-AUTH";
 
 
 let initialState = {
@@ -17,7 +20,8 @@ let initialState = {
   ],
   newPostText: "",
   profile: null,
-}
+  userAuth: null,
+};
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -31,21 +35,40 @@ const profileReducer = (state = initialState, action) => {
             ...state.messagesData, 
             { id: 3, message: newPost, likeCount: 0 }
           ],
-        }
+        };
       case "UPDATE-POST-TEXT":
         return {
           ...state, newPostText: action.newText
-        }
+        };
+
       case "SET-USERS-PROFILE":
         return {
           ...state, profile: action.profile
-        }
+        };
+
+        case "SET-USER-AUTH":
+        return {
+          ...state, userAuth: action.userId
+        };
     default:
       return state;
   }
 };
-export default profileReducer;
+
 
 export const addPostActionCreator = () => ({type: ADD_POST});
 export const updatePostActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text});
 export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile});
+export const setUserAuth = (userId) => ({type: SET_USER_AUTH, userId});
+
+
+export const setProfile = (userId) => {
+  return (dispatch) => {
+    usersAPI.setUserProfile(userId).then(data => {
+      dispatch(setUsersProfile(data))
+    });
+  }
+}
+
+
+export default profileReducer;
