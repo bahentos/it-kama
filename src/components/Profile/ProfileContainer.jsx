@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {setProfile} from "../../redux/profileReducer";
 import {widthAuthRedirect} from "../../hoc/widthAuthRedirect";
+import {compose} from "redux";
 
 class ProfileContainer extends React.Component {
 
@@ -21,11 +22,7 @@ class ProfileContainer extends React.Component {
       </div>
     );
   }
-  
 };
-
-
-let  AuthRedirectComponent = widthAuthRedirect(ProfileContainer);
 
 
 let mapStateToProps = (state) =>  ({
@@ -34,6 +31,8 @@ let mapStateToProps = (state) =>  ({
 });
 
 
-let WithUrlDataContainerComponent = withRouter(AuthRedirectComponent);
-
-export default connect(mapStateToProps, { setProfile })(WithUrlDataContainerComponent);
+export default compose(
+    connect(mapStateToProps, { setProfile }),
+    withRouter,
+    widthAuthRedirect,
+)(ProfileContainer)
