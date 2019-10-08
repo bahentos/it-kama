@@ -7,6 +7,8 @@ import {
 } from '../../redux/usersReducer';
 import Users from './Users';
 import Preloader from '../Common/Preloader/Preloader';
+import {widthAuthRedirect} from "../../hoc/widthAuthRedirect";
+import Dialogs from "../Dialogs/Dialogs";
 
 class UsersAPI extends React.Component {
     componentDidMount() {
@@ -70,6 +72,8 @@ let callObj = {
     getUsers,
 }
 
+let  AuthRedirectComponent = widthAuthRedirect(UsersAPI);
 
-const UsersContainer = connect(mapStateToProps, callObj)(UsersAPI)
+
+const UsersContainer = connect(mapStateToProps, callObj)(AuthRedirectComponent)
 export default UsersContainer;  
