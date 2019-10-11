@@ -2,6 +2,7 @@ import React from "react";
 import s from "./ProfileInfo.module.css";
 import defaultAvatar from "../../../Assets/img/userDefaults.png";
 import Preloader from '../../Common/Preloader/Preloader';
+import ProfileStatus from "../ProfileStatus/ProfileStatus";
 
 const ProfileInfo = (props) => {
   if (!props.profile) {
@@ -15,6 +16,7 @@ const ProfileInfo = (props) => {
                 alt="userAvatar"
               />
             <div className={s.fullName}>{props.profile.fullName}</div>
+            <ProfileStatus status={"Hello!"} />
             <div className={s.isFindJob}>{props.profile.ookingForAJob ? "Не ищет работу" : "Ищет работу"}</div>
             <div className={s.jobDescriptions}>{props.profile.lookingForAJobDescription}</div>
             <div className={s.about}>{props.profile.aboutMe}</div>

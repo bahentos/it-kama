@@ -23,8 +23,7 @@ class UsersAPI extends React.Component {
     render() {
         return (
             <>
-                {this.props.isFetching ? <Preloader/> : null}
-                <Users
+                {this.props.isFetching ? <Preloader/> : <Users
                     totalUsersCount={this.props.totalUsersCount}
                     pageSize={this.props.pageSize}
                     unfollow={this.props.unfollow}
@@ -33,7 +32,8 @@ class UsersAPI extends React.Component {
                     onPageChanged={this.onPageChanged}
                     users={this.props.users}
                     followingInProgress={this.props.followingInProgress}
-                />
+                />}
+
                 ;
             </>
         );
@@ -48,19 +48,8 @@ let mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         followingInProgress: state.usersPage.followingInProgress,
     }
-}
+};
 
-//Старый вариант mapDispatchToProps
-
-// let mapDispatchToProps = (dispatch) => {
-//     return {
-//         follow: (userId) => {dispatch(follow(userId))},
-//         unfollow: (userId) => {dispatch(unfollow(userId))},
-//         setUsers: (users) => {dispatch(setUsers(users))},
-//         setCurrentPage: (page) => {dispatch(setCurrentPage(page))},
-//         setUsersTotalCount: (totalCount) => {dispatch(setUsersTotalCount(totalCount))}
-//     }
-// }
 
 let callObj = {
     follow,
@@ -70,7 +59,7 @@ let callObj = {
     setCurrentPage,
     toggleFollowingProgress,
     getUsers,
-}
+};
 
 let  AuthRedirectComponent = widthAuthRedirect(UsersAPI);
 
