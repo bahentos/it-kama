@@ -11,7 +11,7 @@ import thunkMiddleware from "redux-thunk";
 
 
 let redusers = combineReducers({
-    mypostPage: profileReducer,
+    profilePage: profileReducer,
     dialogsPage: dialogsReducer,
     usersPage: usersReducer,
     sidebar: sidebarReducer,

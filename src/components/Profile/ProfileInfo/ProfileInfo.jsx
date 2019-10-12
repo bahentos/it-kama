@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
                 alt="userAvatar"
               />
             <div className={s.fullName}>{props.profile.fullName}</div>
-            <ProfileStatus status={"Hello!"} />
+            <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
             <div className={s.isFindJob}>{props.profile.ookingForAJob ? "Не ищет работу" : "Ищет работу"}</div>
             <div className={s.jobDescriptions}>{props.profile.lookingForAJobDescription}</div>
             <div className={s.about}>{props.profile.aboutMe}</div>

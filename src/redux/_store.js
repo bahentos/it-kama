@@ -32,7 +32,7 @@ let store = {
       newMessageBody: "",
     },
 
-    mypostPage: {
+    profilePage: {
       messagesData: [
         {
           id: 1,
@@ -53,7 +53,7 @@ let store = {
 
   dispatch(action) {
 
-    this._state.mypostPage = profileReducer(this._state.mypostPage, action);
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
     this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
     this._callSubscriber(this._state);
 
@@ -62,16 +62,16 @@ let store = {
     //   case "ADD-POST":
     //     let newPost = {
     //       id: 3,
-    //       message: this._state.mypostPage.newPostText,
+    //       message: this._state.profilePage.newPostText,
     //       likeCount: 0
     //     };
-    //     this._state.mypostPage.messagesData.push(newPost);
-    //     this._state.mypostPage.newPostText = "";
+    //     this._state.profilePage.messagesData.push(newPost);
+    //     this._state.profilePage.newPostText = "";
     //     this._callSubscriber(this._state);
     //     break;
 
     //   case "UPDATE-POST-TEXT":
-    //     this._state.mypostPage.newPostText = action.newText;
+    //     this._state.profilePage.newPostText = action.newText;
     //     this._callSubscriber(this._state);
     //     break;
       
