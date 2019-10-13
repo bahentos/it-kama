@@ -1,4 +1,4 @@
-import {authAPI, profileAPI, usersAPI} from "../api/API";
+import {authAPI, profileAPI} from "../api/API";
 import {setUserAuth} from "./profileReducer";
 
 const SET_USER_DATA = "SET_USER_DATA";
@@ -22,12 +22,12 @@ const authReducer = (state = initialState, action) => {
                     ...state,
                     ...action.data,
                     isAuth: true,
-                }
+                };
             case "SET_USER_PHOTO":
                 return {
                     ...state,
                     ...action.photo,
-                }
+                };
 
             default:
                 return state;
@@ -51,6 +51,26 @@ export const loginCheck = () => {
             return profileAPI.userPhotoCheck(data.data.id)
         }).then(data => {
             dispatch(setAuthUserPhoto(data.photos.large));
+        })
+    }
+};
+
+
+export const submitLogin = (email, password, rememberMe) => {
+    return (dispatch) => {
+        authAPI.login(email, password, rememberMe).then(data => {
+            if (data.resultCode === 0) {
+                return authAPI.me().then(data => {
+                    if (data.resultCode === 0) {
+                        let {id, email, login} = data.data;
+                        dispatch(setAuthUserData(id, email, login));
+                        dispatch(setUserAuth(id));
+                    }
+                    return profileAPI.userPhotoCheck(data.data.id)
+                }).then(data => {
+                    dispatch(setAuthUserPhoto(data.photos.large));
+                })
+            }
         })
     }
 }

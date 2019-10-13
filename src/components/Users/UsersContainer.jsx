@@ -8,7 +8,6 @@ import {
 import Users from './Users';
 import Preloader from '../Common/Preloader/Preloader';
 import {widthAuthRedirect} from "../../hoc/widthAuthRedirect";
-import Dialogs from "../Dialogs/Dialogs";
 
 class UsersAPI extends React.Component {
     componentDidMount() {
