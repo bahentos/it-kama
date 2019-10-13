@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form'
-import handleSubmit from "redux-form/lib/handleSubmit";
 
 
 const LoginForm = (props) => {

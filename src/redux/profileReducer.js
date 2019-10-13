@@ -19,7 +19,6 @@ let initialState = {
         },
         {id: 2, likeCount: 24, message: "Everyone has one's own path"}
     ],
-    newPostText: "",
     profile: null,
     userAuth: null,
     status: "",
@@ -29,19 +28,17 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case "ADD_POST":
-            let newPost = state.newPostText;
-            return {
-                ...state,
-                newPostText: "",
-                messagesData: [
-                    ...state.messagesData,
-                    {id: 3, message: newPost, likeCount: 0}
-                ],
-            };
-        case "UPDATE_POST_TEXT":
-            return {
-                ...state, newPostText: action.newText
-            };
+            if (action.newPostText !== ""){
+                return {
+                    ...state,
+                    messagesData: [
+                        ...state.messagesData,
+                        {id: 3, message: action.newPostText, likeCount: 0}
+                    ],
+                }
+            }
+            return state;
+
 
         case "SET_USERS_PROFILE":
             return {
@@ -70,8 +67,7 @@ const profileReducer = (state = initialState, action) => {
 };
 
 
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updatePostActionCreator = (text) => ({type: UPDATE_POST_TEXT, newText: text});
+export const addPostActionCreator = (newPostText) => ({type: ADD_POST, newPostText});
 export const setUsersProfile = (profile) => ({type: SET_USERS_PROFILE, profile});
 export const setUserAuth = (userId) => ({type: SET_USER_AUTH, userId});
 export const setStatus = (status) => ({type: SET_STATUS, status});
