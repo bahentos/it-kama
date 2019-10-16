@@ -28,16 +28,13 @@ const profileReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case "ADD_POST":
-            if (action.newPostText !== ""){
-                return {
-                    ...state,
-                    messagesData: [
-                        ...state.messagesData,
-                        {id: 3, message: action.newPostText, likeCount: 0}
-                    ],
-                }
+            return {
+                ...state,
+                messagesData: [
+                    ...state.messagesData,
+                    {id: 3, message: action.newPostText, likeCount: 0}
+                ],
             }
-            return state;
 
 
         case "SET_USERS_PROFILE":

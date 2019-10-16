@@ -1,0 +1,54 @@
+.form {
+    padding: 16px;
+    width: 300px;
+    background: #fafafa;
+}
+
+
+.checkbox {
+    display: none
+}
+.checkboxLabel {
+    color: #949494;
+    font-size: 18px;
+}
+
+input[type="checkbox"] + .checkboxLabel::before {
+    cursor: pointer;
+    content: "";
+    display: inline-block;
+    margin: 0 5px 0 0;
+    border-radius: 2px;
+    width: 18px;
+    height: 18px;
+    background: url(./img/uncheckedBox.svg) 50% 50% no-repeat;
+}
+
+input[type="checkbox"]:checked + .checkboxLabel::before {
+    background: url(./img/checkedBox.svg) 50% 50% no-repeat;
+}
+
+.btnContainer {
+    display: grid;
+    justify-items: end;
+    width: 100%;
+    padding: 8px 0 0 0;
+}
+
+.submit {
+    font-size : 15px;
+    color : #683CB0;
+    color : rgb(104, 60, 176);
+    width: 84px;
+    height: 32px;
+    background: none;
+    border: none;
+}
+
+.submit:hover {
+    background: #EDE8F6;
+}
+
+.submit:active {
+    background : #B7AAE2;
+}

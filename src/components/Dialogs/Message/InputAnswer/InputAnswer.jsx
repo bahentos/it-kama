@@ -1,6 +1,8 @@
 import React from "react";
 import s from "./InputAnswer.module.css";
 import {Field, reduxForm, reset} from 'redux-form'
+import {maxLength15, requiredField} from "../../../../utils/validators/validators";
+import {Textarea} from "../../../Common/FormControl/FormControl";
 
 
 const Answer = props => {
@@ -12,10 +14,10 @@ const Answer = props => {
             <Field
                 name={"newMessageBody"}
                 className={s.textarea}
-                type={"textarea"}
-                component={"input"}
-                rows="1"
+                component={Textarea}
+                // rows="1"
                 placeholder="Type your message..."
+                validate={[requiredField, maxLength15]}
             />
             <button className={s.btn}></button>
         </form>
@@ -32,9 +34,7 @@ const ReduxAnswer = reduxForm({form: 'dialogAnswerForm', onSubmitSuccess: afterS
 const InputAnswer = props => {
 
     let addMessage = (formData) => {
-        if (formData.newMessageBody != undefined) {
-            props.addSendMessage(formData.newMessageBody);
-        }
+        props.addSendMessage(formData.newMessageBody);
     }
     return (
         <ReduxAnswer onSubmit={addMessage} />

@@ -1,22 +1,37 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form'
+import {Field, reduxForm} from 'redux-form';
+import {requiredField} from "../../utils/validators/validators";
+import s from './Login.module.css';
+import {Input} from "../Common/FormControl/FormControl";
 
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field name={"email"} type={"text"} component={"input"} placeholder={"login"}/>
-            </div>
-            <div>
-                <Field name={"password"} type={"password"} component={"input"} placeholder={"Password"}/>
-            </div>
-            <div>
-                <Field name={"rememberMe"} component={"input"} type={"checkbox"}/>
-                <label  htmlFor={"rememberMe"}><span>Remember me</span></label>
-            </div>
-            <div>
-                <button>Login</button>
+        <form className={s.form} onSubmit={props.handleSubmit}>
+            <div className={s.container}>
+                <Field name={"email"}
+                       type={"text"}
+                       labelText="Логин"
+                       component={Input}
+                       validate={[requiredField]}
+                />
+                <Field name={"password"}
+                       type="password"
+                       labelText="Пароль"
+                       component={Input}
+                       validate={[requiredField]}
+                />
+                <div>
+                    <Field name={"rememberMe"}
+                           id="rememberMe"
+                           className={s.checkbox}
+                           component={"input"} t
+                           type={"checkbox"}/>
+                    <label className={s.checkboxLabel} htmlFor={"rememberMe"}>Remember me</label>
+                </div>
+                <div className={s.btnContainer}>
+                    <button className={s.submit}>Login</button>
+                </div>
             </div>
         </form>
 
@@ -33,7 +48,7 @@ const Login = (props) => {
     return (
         <div>
             <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit} />
+            <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     )
 }

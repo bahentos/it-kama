@@ -1,0 +1,88 @@
+/*Styled Textarea*/
+
+.formControl {
+    position: relative;
+}
+
+.formControl.error {
+    border: 1px solid red;
+}
+
+.errorMessage {
+    color: red;
+    font-width: bold;
+}
+
+/*Styled Input*/
+
+.inputControl:first-child {
+    margin-bottom: 48px;
+}
+
+.fieldSlot {
+    position: relative;
+    width: 100%;
+    padding: 8px 0;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #949494;
+}
+
+.fieldSlot:after {
+    position: absolute;
+    top: 100%;
+    background-color: #683CB0;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz--transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.fieldSlot:hover:after,
+.fieldSlot:focus:after {
+    width: 100%;
+}
+
+.labelInput {
+    color: #949494;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    right: auto;
+    animation: shake .6s cubic-bezier(.25,.8,.5,1);
+}
+
+
+input[type="password"]:focus + .labelInput,
+input[type="text"]:focus + .labelInput {
+    color: #683CB0;
+    max-width: 100%;
+    transform: translateY(-18px) scale(.75);
+}
+
+
+.labelInput.labelError {
+    color: #d50000;
+}
+
+
+.input {
+    outline:none;
+    text-align: start;
+    line-height: 20px;
+    padding: 8px 0;
+    max-width: 100%;
+    min-width: 0;
+    max-height: 32px;
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    color: #949494;
+}
+
+.textFieldDetail {
+    font-size: 12px;
+    color: #d7061c;
+}
