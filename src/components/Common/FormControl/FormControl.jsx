@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './FormControl.module.css'
+import {useState, useEffect} from 'react';
 
 export const Textarea = ({input, meta, ...props}) => {
     const hasError = meta.touched && meta.error;
@@ -11,27 +12,40 @@ export const Textarea = ({input, meta, ...props}) => {
     )
 }
 
-export const Input = ({input, meta, ...props}) => {
-    const hasError = meta.touched && meta.error;
-    return (
+export const Input = ({input, meta, labelText, ...props}) => {
 
-        <div className={s.inputControl}>
+    const [value, setValue] = useState("");
+
+    useEffect(() => {
+    }, [value]);
+
+
+    let onChange = (e) => {
+        setValue(e.target.value)
+    }
+
+    const hasError = meta.touched && meta.error;
+
+    return (
+        <>
             <div className={s.fieldSlot}>
                 <input {...input} {...props}
                        id="email"
-                       autocomplete="off"
-                       className={`${s.input}`}
-                       type={props.type}
-                />
-                <label className={s.labelInput + " " + (hasError ? s.labelError : "")}
+                       value={value}
+                       onChange={onChange}
+                       autoComplete="off"
+                       className={s.input}
+                       type={props.type}/>
+                <label className={s.labelInput + " " + (hasError ? s.labelError : "")
+                + " " + (value ? s.transformLabel : "")}
                        htmlFor="email"
                 >
-                    {props.labelText}
+                    {labelText}
                 </label>
 
             </div>
             {hasError && <div className={s.textFieldDetail}>{meta.error}</div>}
-        </div>
+        </>
 
     )
 };

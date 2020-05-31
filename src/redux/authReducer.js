@@ -1,5 +1,6 @@
 import {authAPI, profileAPI} from "../api/API";
 import {setUserAuth} from "./profileReducer";
+import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = "SET_USER_DATA";
 const SET_USER_PHOTO = "SET_USER_PHOTO";
@@ -56,8 +57,12 @@ export const loginCheck = () => {
 };
 
 
-export const submitLogin = (email, password, rememberMe) => {
-    return (dispatch) => {
+export const submitLogin = (email, password, rememberMe) => (dispatch) => {
+
+    let action = stopSubmit("login", {_error: "Email is wrong"});
+    dispatch(action);
+    debugger
+    return;
         authAPI.login(email, password, rememberMe).then(data => {
             if (data.resultCode === 0) {
                 return authAPI.me().then(data => {
@@ -65,6 +70,9 @@ export const submitLogin = (email, password, rememberMe) => {
                         let {id, email, login} = data.data;
                         dispatch(setAuthUserData(id, email, login));
                         dispatch(setUserAuth(id));
+                    } else {
+                        let action = stopSubmit("login", {email: "Email is wrong"});
+                        dispatch(action);
                     }
                     return profileAPI.userPhotoCheck(data.data.id)
                 }).then(data => {
@@ -73,4 +81,3 @@ export const submitLogin = (email, password, rememberMe) => {
             }
         })
     }
-}
