@@ -55,6 +55,7 @@ export const loginCheck = () => {
         })
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 };
 
 
@@ -82,6 +83,9 @@ export const submitLogin = (email, password, rememberMe) => (dispatch) => {
             }
         })
     }
+=======
+}
+>>>>>>> parent of e807cc5... Lesson 75: redux-form введение (login)
 =======
 }
 >>>>>>> parent of e807cc5... Lesson 75: redux-form введение (login)
