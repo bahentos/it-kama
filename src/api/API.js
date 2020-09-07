@@ -1,5 +1,4 @@
 import * as axios from "axios";
-import sidebarReducer from "../redux/sidebarReducer";
 
 
 const instance = axios.create({
@@ -19,14 +18,14 @@ export const usersAPI = {
             })
     },
 
-    followUsers(id) {
+    followUsers (id) {
         return instance
             .post(`follow/${id}`).then(response => {
                 return response.data
             })
     },
 
-    unfollowUsers(id) {
+    unfollowUsers (id) {
         return instance
             .delete(`follow/${id}`).then(response => {
                 return response.data
@@ -35,7 +34,7 @@ export const usersAPI = {
 };
 
 export const profileAPI = {
-    setUserProfile(id) {
+    setUserProfile (id) {
         return instance
             .get(`profile/${id}`).then(response => {
                 return response.data;
@@ -43,7 +42,7 @@ export const profileAPI = {
             });
     },
 
-    userPhotoCheck(id) {
+    userPhotoCheck (id) {
         return instance
             .get(`profile/${id}`).then(response => {
                 return response.data;
@@ -71,17 +70,6 @@ export const authAPI = {
                 return response.data;
 
             })
-            .catch(error => {
-                alert(error.message)
-            });
+            .catch(error => { alert(error.message)});
     },
-
-    login(email, password, rememberMe) {
-        return instance
-            .post(`auth/login`, {email: email, password: password, rememberMe: rememberMe})
-            .then(response => {
-                return response.data;
-
-            })
-    }
-};
+}

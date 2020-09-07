@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import {Field, reduxForm, reset} from 'redux-form';
 import {requiredField} from "../../utils/validators/validators";
 import s from './Login.module.css';
@@ -55,6 +56,12 @@ const Login = (props) => {
             <LoginReduxForm onSubmit={onSubmit}/>
         </div>
     )
+=======
+
+
+const Login = (props) => {
+    return <h1>Login</h1>
+>>>>>>> parent of e807cc5... Lesson 75: redux-form введение (login)
 }
 
 export default Login;

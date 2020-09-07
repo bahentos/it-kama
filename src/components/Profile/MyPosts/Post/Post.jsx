@@ -14,11 +14,11 @@ const Post = props => {
       <div className={s.message}>{props.message}</div>
       <div className={s.likeGroup}>
         <div className={s.likeContainer}>
-          <button className={s.like + " " + s.btn} />
+          <button className={s.like} />
           <span>Like({props.likeCount})</span>
         </div>
         <div className={s.shareContainer}>
-          <button className={s.share + " " + s.btn}></button>
+          <button className={s.share}></button>
           <span>Share</span>
         </div>
       </div>
